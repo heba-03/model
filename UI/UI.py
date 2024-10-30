@@ -65,7 +65,9 @@ def apply_font_size(size_percentage):
     base_font_size = 12
     size = int(base_font_size * (int(size_percentage.strip('%')) / 100))
     result_label.config(font=("Arial", size))
-
+    mode_label.config(font=("Arial", size))
+    font_label.config(font=("Arial", size))
+    title_label.config(font=("Arial", size))
 
 root = tk.Tk()
 root.title("Speech Emotion Detection")
