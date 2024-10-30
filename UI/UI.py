@@ -30,17 +30,16 @@ def speech_to_text(audio_file):
     predicted_emotion_ids = torch.argmax(emotion_logits, dim=-1)
     emotion_labels = ["angry", "disgust", "fear", "happy", "neutral", "sad", "surprised"]
 
-    predicted_emotion = emotion_labels[
-        predicted_emotion_ids[0].item()] if predicted_emotion_ids.numel() > 0 else "No emotion detected."
+    predicted_emotion = emotion_labels[predicted_emotion_ids[0].item()] if predicted_emotion_ids.numel() > 0 else "No emotion detected."
 
     return transcription, predicted_emotion
 
 def apply_mode(mode):
     if mode == "Dark":
-        bg_color = "#121212"
-        fg_color = "#ffffff"
-        result_bg = "#1e1e1e"
-        frame_color = "#2b2b2b"
+        bg_color = "#121212" #Very dark gray
+        fg_color = "#ffffff" # white
+        result_bg = "#1e1e1e" # Very dark gray but lighter than 121212
+        frame_color = "#2b2b2b" #Medium-dark gray
     else:
         bg_color = "white"
         fg_color = "black"
